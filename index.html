@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#020713">
+
+<!-- SEO Meta Tags -->
+<title>Interactive Cyber Attack Map | Real-Time Threat Visualization</title>
+<meta name="description" content="Explore an interactive global cyber attack map simulation. Track simulated cybersecurity threats, DDoS activity, malware traffic, and botnet vectors worldwide in real time.">
+<meta name="keywords" content="cyber attack map, cyber threat map, live cyber attack map, malware tracker, DDoS map, threat visualization, cybersecurity dashboard, security telemetry map">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://cyberattackmap.vercel.app/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cyberattackmap.vercel.app/">
+<meta property="og:title" content="Interactive Cyber Attack Map | Real-Time Threat Visualization">
+<meta property="og:description" content="Explore an interactive global cyber threat visualization with simulated attack routes, DDoS activity, and real-time security event telemetry.">
+<meta property="og:image" content="https://cyberattackmap.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cyber Attack Map Simulation Dashboard">
+<meta property="og:site_name" content="Cyber Attack Map">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://cyberattackmap.vercel.app/">
+<meta name="twitter:title" content="Interactive Cyber Attack Map | Real-Time Threat Visualization">
+<meta name="twitter:description" content="Explore an interactive global cyber threat visualization with simulated attack routes and live event telemetry.">
+<meta name="twitter:image" content="https://cyberattackmap.vercel.app/og-image.png">
+
+<!-- Favicon & Icons -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://cyberattackmap.vercel.app/#webapp",
+      "url": "https://cyberattackmap.vercel.app/",
+      "name": "Cyber Attack Map Simulation",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas/SVG support.",
+      "description": "Interactive global cyber attack map visualizing simulated cyber threats, malware vectors, and network incident telemetry worldwide.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cyberattackmap.vercel.app/#website",
+      "url": "https://cyberattackmap.vercel.app/",
+      "name": "Cyber Attack Map",
+      "description": "Global Cyber Threat Visualization and Attack Simulation Dashboard",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Cyber Threat Analytics",
+        "url": "https://cyberattackmap.vercel.app/"
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Security & Preconnect Performance -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; connect-src 'self' https://cdn.jsdelivr.net; img-src 'self' data:; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+<link rel="stylesheet" href="css/style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+<script defer src="js/app.js"></script>
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="brand">
+    <span class="led"></span>
+    <span class="live">SIM LIVE</span>
+    <span class="divider"></span>
+    <div>
+      <h1>CYBER ATTACK MAP</h1>
+      <p>GLOBAL THREAT VISUALIZATION · DEMO</p>
+    </div>
+  </div>
+  <div class="metrics">
+    <div class="metric"><label>SIMULATED EVENTS</label><strong id="total">82,461 <span class="green">↑ LIVE</span></strong></div>
+    <div class="metric"><label>TOP ATTACK TYPE</label><strong class="small">◉ Malicious Traffic</strong><span class="sub">Recent simulated events</span></div>
+    <div class="metric"><label>TOP SOURCE COUNTRY</label><strong class="small" style="color:#d8eaff">🇷🇺 Russia</strong><span class="sub">Demo activity only</span></div>
+  </div>
+  <div class="clock"><label id="date"></label><strong id="time"></strong><span>LOCAL TIME</span></div>
+</header>
+<main class="stage">
+  <h2 class="sr-only">Live Cyber Attack Simulation Map and Threat Intelligence Dashboard</h2>
+  <svg id="world" role="img" aria-label="Illustrative global map with simulated cyber attack routes"></svg>
+  <div class="mapglow"></div>
+  <section class="panel recent" aria-label="Recent Cyber Attacks Feed">
+    <div class="ptitle">● RECENT ATTACKS</div>
+    <div id="recent"></div>
+  </section>
+  <section class="panel legend" aria-label="Cyber Attack Classification Legend">
+    <h3 class="ptitle">ATTACK TYPES</h3>
+    <div class="legendrow"><i style="background:#ff315b;color:#ff315b"></i>Malicious Traffic</div>
+    <div class="legendrow"><i style="background:#ffb941;color:#ffb941"></i>Suspicious Activity</div>
+    <div class="legendrow"><i style="background:#08d7ff;color:#08d7ff"></i>Scanning Activity</div>
+    <div class="legendrow"><i style="background:#c05cff;color:#c05cff"></i>Botnet Activity</div>
+  </section>
+  <div class="hint">SIMULATED GLOBAL THREAT ACTIVITY · NOT REAL-TIME INCIDENT DATA</div>
+</main>
+<footer class="feed">
+  <div class="feedtitle">▥ LIVE SIMULATION FEED　<span style="color:#ff315b">●</span></div>
+  <div class="feedlist" id="feed"></div>
+</footer>
+</div>
+</body>
+</html>
